@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Recognition Result</title>
+</head>
+<body>
+    <h1>Emotion Recognition Result</h1>
+    <p id="predictionText">Prediction: {{ prediction }}</p>
+    <button onclick="speakPrediction()">Speak Prediction</button>
+
+    <script>
+        function speakPrediction() {
+            const predictionText = document.getElementById('predictionText').textContent;
+            const utterance = new SpeechSynthesisUtterance(predictionText);
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
